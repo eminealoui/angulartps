@@ -9,7 +9,7 @@ import { ConferenceList } from '../conference-list/conference-list';
 })
 export class Home {
   SiteName:String="site";
-  imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPu2_0EgmSBtQgUjMDGXd6iDHBzIoXY56ATjDVYx8Log&s=10";
+  imageSrc="https://static.wikia.nocookie.net/jimmyneutron/images/5/57/Jimmy_Neutron.png/revision/latest?cb=20180219044703";
   clickme(){
     return alert("Button clicked!");
   }

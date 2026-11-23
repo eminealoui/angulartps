@@ -1,17 +1,19 @@
 <h1>List des Conferences </h1>
+<input type="text" [(ngModel)]="searchItem" placeholder="Search by conference">
 <div class="container-fluid d-flex flex-wrap justify-content-center">
-    @for (conf of confList; track conf.id) {
+    @for (conf of filter(); track conf.id) {
         @if(conf.nbPlaces > 0) {
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src={{conf.imageUrl}} alt="conf_image">
-            <div class="card-body">
-                <h5 class="card-title">{{conf.titre | uppercase}}</h5>
-                <p class="card-text">{{conf.description}}</p>
-                <a href="#" class="btn btn-primary">Add to favorites</a>
-            </div>
-            </div>
+           <appcard [conf]="conf" (addToFavorites)="addToFavorites($event)" (addlike)="addlike($event)"></appcard>
         }
     }@empty {
         <h2>Pas de conferences  </h2>
     }
+</div>
+<div>
+    <h1>list des favoris</h1>
+    <ul>   
+    @for (conf of favList(); track conf.id) {
+     <li>{{conf.titre}}</li>
+    }
+    </ul>
 </div>
